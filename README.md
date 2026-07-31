@@ -1,32 +1,58 @@
-# React + TypeScript + Vite
+# OfferPath
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+OfferPath 是一个面向个人求职场景的岗位管理平台，用于集中记录来自不同招聘平台和企业官网的岗位信息，并持续追踪投递进度。
 
-Currently, two official plugins are available:
+项目将逐步加入技能匹配度与数据统计能力，帮助用户更清晰地了解岗位情况、求职进展和个人技术栈差距。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 主要功能
 
-## React Compiler
+- 用户登录与路由鉴权
+- 新增、编辑、删除和查看岗位
+- 管理岗位投递状态
+- 按状态、平台等条件筛选岗位
+- 维护个人技术栈并计算岗位匹配度
+- 通过仪表盘查看岗位状态和求职进度统计
+- 响应式布局，支持桌面端与移动端
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+后续计划支持粘贴岗位 URL，自动提取公司、岗位、技能要求等信息。
 
-## Expanding the Oxlint configuration
+## 岗位状态
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```text
+想投 -> 已投 -> 书类选考 -> 一面 -> 二面 -> 三面 -> 终面 -> Offer
+  \___________________________________________________________ 挂了
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## 技术栈
+
+### 前端
+
+- React + TypeScript + Vite
+- Redux Toolkit
+- React Router
+- shadcn/ui + Tailwind CSS
+- ECharts
+- Axios
+
+### 后端（计划）
+
+- NestJS
+- PostgreSQL 或 MySQL
+- Docker / Docker Compose
+
+## 开发计划
+
+当前优先完成登录、岗位 CRUD、岗位列表、岗位详情和状态管理。后续将逐步接入真实后端、技能匹配、仪表盘统计以及 AI 岗位解析功能。
+
+## 本地运行
+
+```bash
+npm install
+npm run dev
+```
+
+构建项目：
+
+```bash
+npm run build
+```
